@@ -1,39 +1,33 @@
-import java.util.Scanner;
-class Student {
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		String name;
-		int age;
-		float marks;
-		char grade;
-		boolean isPass;
-		long phone;
-		double db;
-		short st;
-		System.out.println("enter name : ");
-		name = sc.nextLine();
-		System.out.println("enter age : ");
-		age = sc.nextInt();
-		System.out.println("enter marks: ");
-		marks = sc.nextFloat();
-		System.out.println("enter grade : ");
-		grade = sc.next().charAt(0);
-		System.out.println("enter passing status : ");
-		isPass = sc.nextBoolean();
-		System.out.println("enter phone number : ");
-		phone = sc.nextLong();
-		System.out.println("enter double value : ");
-		db = sc.nextDouble();
-		System.out.println("enter short value : ");
-		st = sc.nextShort();
+public class Student {
+	int rollNo = 1;
+	String name = "Keshav";
+	String course = "mca";
+	int marks = 89;
+	public Student() {
+		System.out.println("default constructor is called");
+	}
+	public Student(int a, String b, String c, int d) {
+		rollNo = a;
+		name = b;
+		course = c;
+		marks = d;
+	}
+	public Student(String c) {
+		course = c;
+		System.out.println("with one parameter");
+	}
+	public void print() {
+		System.out.println(rollNo);
 		System.out.println(name);
-		System.out.println(age);
+		System.out.println(course);
 		System.out.println(marks);
-		System.out.println(grade);
-		System.out.println(isPass);
-		System.out.println(phone);
-		System.out.println(db);
-		System.out.println(st);
-		// System.out.println("your name is " + name + " and your age is " + age);
+	}
+	public static void main(String[] args) {
+		Student s1 = new Student();
+		Student s2 = new Student(7, "Khushi", "mca", 87);
+		Student s3 = new Student("mbbs");
+		s1.print();
+		s2.print();
+		s3.print();
 	}
 }
